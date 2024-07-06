@@ -1,10 +1,10 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:17
 LABEL authors="codebuffdev"
 
 VOLUME /tmp
 
-EXPOSE 8080
+EXPOSE 8081
 
-COPY target/* app.jar
+COPY target/readiness-liveness-probe-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "/app.jar"]
