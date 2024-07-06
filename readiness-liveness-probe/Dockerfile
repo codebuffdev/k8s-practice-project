@@ -1,4 +1,10 @@
-FROM ubuntu:latest
-LABEL authors="sp"
+FROM openjdk:11-jre-slim
+LABEL authors="codebuffdev"
 
-ENTRYPOINT ["top", "-b"]
+VOLUME /tmp
+
+EXPOSE 8080
+
+COPY target/* app.jar
+
+ENTRYPOINT ["java", "-jar", "/app.jar"]

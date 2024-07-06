@@ -2,7 +2,10 @@ package in.codebuffdev.readinesslivenessprobe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 @SpringBootApplication
 public class ReadinessLivenessProbeApplication {
 
@@ -10,4 +13,8 @@ public class ReadinessLivenessProbeApplication {
         SpringApplication.run(ReadinessLivenessProbeApplication.class, args);
     }
 
+    @GetMapping("/hello")
+    public String hello(){
+        return "hello";
+    }
 }
